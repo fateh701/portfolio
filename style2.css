@@ -717,4 +717,10 @@
         height: 60px;
     }
 
+    .exp-title{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+
 }
