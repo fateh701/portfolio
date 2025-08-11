@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage9.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <dic class="space"></dic>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    Optimized Network Performance Analysis in Wireless Communication Systems
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+                        <b>
+                            Introduction
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        As wireless networks become the backbone of modern connectivity, their performance under varying
+                        channel conditions determines the quality of user experience. This project focuses on a
+                        <b>comparative performance analysis</b> of wireless networks using <b>QualNet simulation
+                            software</b>, targeting both <b>transport</b> and <b>application layer behavior</b>.
+                        The study investigates <b>baseline (no fading)</b> and <b>realistic (fading)</b> environments to
+                        identify performance degradations and explore possible optimizations. The results provide
+                        actionable insights for enhancing network resilience in <b>IoT, mobile broadband</b>, and
+                        <b>critical communication</b> deployments.
+                    </div>
+
+                    <div>
+                        <img id="image1" src="project9-picture1.png">
+                    </div>
+
+                    <div>
+                        <img id="image2" src="project9-picture2.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        <b>Suggested Figure</b>: Network Topology Configuration
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Simulation Environment and Setupv
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        The network was modeled with 18 nodes interconnected through wireless links. Two primary traffic
+                        flows were defined:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>UDP Traffic-Gen : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Simulating high-speed, low-latency transmissions.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>FTP over TCP : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Emulating reliability-focused file transfers.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="content-subheading">
+                        Two Scenarios:
+                    </div>
+
+                    <div class="content-text">
+
+                        <ol>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Scenario A (Baseline) : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Ideal wireless channel, no fading effects.
+                                </div>
+
+                                <div>
+                                    <img id="image3" src="project9-picture3.png">
+                                </div>
+
+                                <div class="space"></div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Scenario B (Variable Channel) : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Multipath fading and shadowing introduced to replicate real-world environments.
+                                </div>
+
+                                <div>
+                                    <img id="image4" src="project9-picture4.png">
+                                </div>
+
+                                <div class="space"></div>
+
+                            </li>
+
+                        </ol>
+                    </div>
+
+                    <div class="content-text">
+                        Both scenarios were configured with detailed MAC layer parameters (CTS/RTS exchanges,
+                        retransmission limits) to capture link-level performance variations.
+                    </div>
+
+                    <div>
+                        <img id="image5" src="project9-picture5.png">
+                    </div>
+
+                    <div>
+                        <img id="image6" src="project9-picture6.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        <b>Suggested Figure:</b> Simulation Parameters Table
+                    </div>
+
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Performance Metrics and Observations
+                        </b>
+                    </div>
+
+                    <div class="content-subheading">
+                        Application Layer
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>UDP : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    <ul>
+                                        <li>
+                                            Scenario A achieved <b>consistently high throughput</b> with negligible
+                                            delay.
+                                        </li>
+                                        <li>
+                                            Scenario B saw a <b>drop in packet delivery ratio</b> due to fading-induced
+                                            errors and retransmissions.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>TCP : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    <ul>
+                                        <li>
+                                            Stable throughput in Scenario A
+                                        </li>
+                                        <li>
+                                            In Scenario B, <b>throughput reduction</b> was observed, largely from
+                                            increased retransmission overhead caused by poor link quality
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image7" src="project9-picture7.png">
+                    </div>
+
+                    <div class="image-text">
+                        <b>Suggested Figure :</b> UDP/TCP Throughput Comparison Graph
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Transport Layer
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>UDP Packets : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Matched application-layer send rates in Scenario A but <b>experienced losses</b> in
+                                    fading environments.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>TCP Packets : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Maintained integrity in Scenario A, but fading introduced more <b>duplicate
+                                        acknowledgments</b> and <b>packet retransmissions</b>, increasing latency and
+                                    reducing effective throughput.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image8" src="project9-picture8.png">
+                    </div>
+
+                    <div class="image-text">
+                        <b>Suggested Figure:</b> TCP Retransmissions Over Time
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        MAC Layer
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>CTS/RTS Packets : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Increased exchange frequency in fading conditions, reflecting repeated transmission
+                                    attempts.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Packet Drops : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Noticeably higher in Scenario B, indicating fading's direct impact on channel
+                                    reliability.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>ACK Success Rate : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Declined under fading, leading to delayed packet confirmations and reduced
+                                    upper-layer efficiency.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image9" src="project9-picture9.png">
+                    </div>
+
+                    <div class="image-text">
+                        <b>Suggested Figure:</b> MAC Layer Packet Drop Analysis
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Application Impact
+                    </div>
+
+                    <div class="content-text">
+                        The insights gained extend beyond simulation:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>For IoT Systems : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Reliability is critical; adaptive retransmission and coding schemes can offset
+                                    fading losses.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>For Multimedia Streaming : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Maintaining high throughput under fading is essential to avoid buffering and quality
+                                    drops.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>For Critical Communications : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Low-latency response is non-negotiable, requiring dynamic link adaptation and error
+                                    control mechanisms.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="content-text">
+                        <b>Suggested Extra Figure:</b> Conceptual Diagram - Performance Optimization Strategies in
+                        Wireless Networks (to be generated for portfolio use).
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Conclusion
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        This project demonstrates that fading has a <b>significant</b>, <b>measurable impact</b> on wireless network
+                        performance across all OSI layers. By comparing ideal and impaired channel scenarios, it
+                        highlights the necessity for <b>adaptive</b>, <b>channel-aware networking techniques</b>.
+                    </div>
+
+                    <div class="content-text">
+                        The study's results can guide <b>network engineers</b> and <b>system designers</b> in building more resilient
+                        communication frameworks, directly applicable to <b>5G, IoT, and mission-critical deployments</b>.
+
+                    </div>
+
+                    
+                </div>
+                
+                <div class="space"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

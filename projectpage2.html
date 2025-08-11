@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage2.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <div class="space"></div>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    Design of a Grid-Connected Photovoltaic (PV) System for a Residential Building
+                    Architecture, Control Strategy, Grid Integration, and Lifecycle Performance
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+                        <b>
+                            Introduction
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        This project presents the design of a grid-connected rooftop photovoltaic (PV) system for a
+                        residential building. The system is developed by aligning three core aspects:
+                        <ol>
+
+                            <li>
+                                Household energy consumption patterns
+                            </li>
+
+                            <li>
+                                Household energy consumption patterns
+                            </li>
+
+                            <li>
+                                Grid compliance requirements
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <img id="image1" src="project2-picture1.png">
+
+                    <div class="image-text">
+                        Figure 1 - Layout of House
+                    </div>
+
+                    <div class="space">
+
+                    </div>
+
+                    <div class="content-heading">
+                        <b>
+                            Objective
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        The design aims to develop a conceptually sound, standards-compliant PV system that:
+                        <ul>
+                            <li>
+                                Matches the array's operating envelope with inverter voltage and current constraints
+                            </li>
+
+                            <li>
+                                Ensures stable, low-distortion current injection at or near unity power factor
+                            </li>
+
+                            <li>
+                                Demonstrates long-term value through energy cost savings under variable demand and
+                                tariff conditions
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            System Overview and Design
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-subheading">
+                        Load Characterization
+                    </div>
+
+                    <div class="content-text">
+                        The residential load profile is categorized into lighting, plug loads, HVAC, and mechanical
+                        systems. Daily energy demand defines the required array size, while timing and simultaneity of
+                        loads inform decisions on whether energy is self-consumed or exported.
+                    </div>
+
+                    <img id="image2"  src="project2-picture2.png">
+
+                    <div class="image-text">
+                        Table 1 - Loads
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        PV Module Characteristics
+                    </div>
+
+                    <div class="content-text">
+                        Photovoltaic modules act as nonlinear, current-limited sources. Their maximum power point (MPP)
+                        varies with irradiance and temperature. String sizing is performed to ensure:
+
+                        <ul>
+                            <li>
+                                Cold-weather open-circuit voltage remains below the inverter's DC maximum input
+                            </li>
+
+                            <li>
+                                Hot-weather MPP voltage remains within the inverter's high-efficiency zone
+                            </li>
+
+                            <li>
+                                Adequate voltage margins are available to accommodate environmental transients
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Implementation and Control Strategy
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-subheading">
+                        Array Configuration and Stringing
+                    </div>
+
+                    <div class="content-text">
+                        Series connections define voltage levels, while parallel strings contribute to current output.
+                        The string length is selected to minimize balance-of-system (BOS) complexity and mismatch
+                        losses. Module placement is influenced by shading patterns, rooftop layout, and inverter input
+                        limitations.
+                    </div>
+
+                    <div>
+                        <img id="image3"  src="project2-picture3.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Figure 2 - PV Module I-V Characteristics and Layout
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Inverter Functionality
+                    </div>
+
+                    <div class="content-text">
+                        A modern grid-tied inverter performs two primary control functions:
+
+                        <ol>
+                            <li>
+                                Phase-locked synchronization with the utility grid and sinusoidal AC output regulation
+                            </li>
+
+                            <li>
+                                Maximum Power Point Tracking (MPPT) and DC bus stabilization to ensure optimal energy
+                                conversion
+                            </li>
+
+                        </ol>
+
+                    </div>
+
+                    <div class="content-text">
+                        The system is designed to deliver sinusoidal current at unity power factor, with low total
+                        harmonic distortion (THD) and compliance with anti-islanding, voltage, and frequency
+                        ride-through standards.
+                    </div>
+
+                    <div class="content-subheading">
+                        Filtering and Power Quality
+                    </div>
+
+                    <div class="content-text">
+                        An output filter (typically L or LCL type) is used to suppress switching noise and ensure that
+                        the injected grid current is smooth and sinusoidal. The filter is designed to balance harmonic
+                        suppression with dynamic performance.
+                    </div>
+
+                    <div class="content-subheading">
+                        Cabling and Protection
+                    </div>
+
+                    <div class="content-text">
+                        Wiring is dimensioned based on ampacity, voltage drop limitations, and routing considerations.
+                        Proper DC/AC protection, disconnect mechanisms, labeling, and grounding are incorporated to
+                        ensure a code-compliant and safe installation.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Modeling and Verification
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        Simulation is used to evaluate the system's electrical performance and control behavior prior to
+                        implementation. The emphasis is placed on waveform integrity, phase alignment, current
+                        regulation, and transient response.
+                    </div>
+
+                    <div>
+                        <img id="image4"  src="project2-picture4.png">
+                    </div>
+
+                    <div  class="image-text">
+                        Figure 3 - PSIM Circuit Overview
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image5"  src="project2-picture5.png">
+                    </div>
+
+                    <div class="image-text">
+                        Figure 4 - Composite waveform - Grid Voltage, Inverter Output, Output Power
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Performance Metrics Assessed
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Synchronization : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Grid and inverter voltages are phase-aligned with stable zero-crossings
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Current Injection : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Exported current is sinusoidal with minimal ripple
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Controller Dynamics : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    The inverter responds smoothly to changes in irradiance and
+                                    load, without instability or oscillation in the DC bus voltage.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Lifecycle Performance and Value Analysis
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        The system's energy output is evaluated against household demand and prevailing tariff
+                        structures. Monthly performance is assessed before and after PV installation, considering both
+                        self-consumption and exported energy.
+                    </div>
+
+                    <div>
+                        <img  id="image6" src="project2-picture6.png">
+                    </div>
+
+                    <div class="image-text">
+                        Figure 5 - Monthly Energy Before PV
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img  id="image7" src="project2-picture7.png">
+                    </div>
+
+                    <div class="image-text">
+                        Monthly Energy With PV
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Interpretation of Lifecycle Plots
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+                                Monthly profiles illustrate how PV generation aligns with household consumption.
+                            </li>
+
+                            <li>
+                                Savings outcomes depend on tariff policies—particularly the value of exported energy
+                                versus grid imports.
+                            </li>
+
+                            <li>
+                                The analysis emphasizes long-term resilience to policy shifts, energy prices, and
+                                seasonal variation.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+
+                    <div class="content-heading">
+
+                        <b>
+                            Conclusion
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        This project demonstrates a methodical approach to designing a residential PV system grounded in
+                        electrical theory, inverter control strategies, and lifecycle cost evaluation. The system aligns
+                        hardware parameters with environmental conditions and grid constraints, ensuring clean energy
+                        delivery, regulatory compliance, and meaningful long-term cost savings. The emphasis remains on
+                        system resilience, waveform quality, and consistent performance throughout the year.
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="space"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

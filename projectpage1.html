@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage1.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <div class="space"></div>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    Speed Control of BLDC Motor Using Arduino and PWM Technique
+                    Hardware Design, Control Strategy, and Simulation
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+
+                        <b>
+                            Introduction
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        Brushless DC (BLDC) motors have gained prominence due to their efficiency, low maintenance, and
+                        ability to deliver high torque and speed without the drawbacks of mechanical commutators. This
+                        project focuses <b>on controlling the speed of a BLDC motor using Arduino Uno and PWM (Pulse
+                            Width
+                            Modulation) techniques</b>, combined with simulation in MATLAB/Simulink for analysis of
+                        motor
+                        performance and dynamic behavior.
+                    </div>
+
+                    <div class="content-text">
+                        The project involves the implementation of both <b>hardware and simulation models</b>,
+                        highlighting how
+                        PWM signals from an Arduino can effectively drive an Electronic Speed Controller (ESC) to
+                        regulate motor speed. A Proportional-Integral (PI) controller is used in the simulation
+                        environment to improve response and stability.
+                    </div>
+
+                    <img id="image1" id="image1" src="project1-picture1.png">
+
+                    <div class="image-text">
+                        Figure 1 - BLDC Motor Cross Section with Hall Sensors
+                    </div>
+
+                    <div class="space">
+
+                    </div>
+
+                    <div class="content-heading">
+                        <b>
+                            Objective
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        To develop a cost-effective and efficient speed control solution for a BLDC motor using:
+                        <ul>
+                            <li>Arduino Uno as the controller</li>
+                            <li>PWM-based speed variation</li>
+                            <li>ESC for electronic commutation</li>
+                            <li>Simulink models for testing motor behavior under varying loads and speeds</li>
+                        </ul>
+                    </div>
+
+                    <div class="space">
+
+                    </div>
+
+                    <div class="content-heading">
+                        <b>
+                            System Overview and Design
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-subheading">
+                        BLDC Motor and Its Construction
+                    </div>
+
+                    <div class="content-text">
+                        A BLDC motor consists of a stationary stator with armature windings and a rotating permanent
+                        magnet rotor. Hall sensors are integrated to determine the rotor's position, which is essential
+                        for electronic commutation. The elimination of brushes enhances motor reliability, reduces
+                        noise, and increases lifespan.
+                    </div>
+
+                    <img id="image2" src="project1-picture2.png">
+
+                    <div class="image-text">
+                        Figure 2 - Stator and Rotor Construction
+                    </div>
+
+                    <div class="content-text">
+                        Key Features of BLDC Motors:
+                        <ul>
+                            <li>High efficiency and reliability.</li>
+                            <li>Better torque-to-weight ratio and dynamic response.</li>
+                            <li>No mechanical commutation or brush wear.</li>
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Hardware Components
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        The hardware setup includes:
+                        <ul>
+                            <li>
+                                <div class="innerli-head">
+                                    <b>Arduino Uno : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Generates PWM signals to control the ESC.
+                                </div>
+                               
+                            </li>
+
+                            <li>
+                                <div class="innerli-head">
+                                    <b>Electronic Speed Controller (ESC) : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    GridInterfaces with the motor and performs
+                                electronic commutation
+                                </div>
+                                
+                            </li>
+
+                            <li>
+                                <div class="innerli-head">
+                                    <b>Potentiometer : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Adjusts the PWM duty cycle for speed control.
+                                </div>
+                                
+                            </li>
+
+                            <li>
+                                <div class="innerli-head">
+                                    <b>A2212/6T 2200KV BLDC Motor : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Commonly used for drones and robotics.
+                                </div>
+                                
+                            </li>
+
+                            <li>
+                                <div class="innerli-head">
+                                    <b>3S Li-Po Battery : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Provides the required DC supply.
+                                </div>
+        
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image3" id="image3" src="project1-picture3.png">
+                        <img id="image4" src="project1-picture4.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Figure 3 - Hardware Components Overview
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Control Strategy and Methodology
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-subheading">
+                        PWM-Based Speed Control
+                    </div>
+
+                    <div class="content-text">
+                        PWM signals with adjustable duty cycles control the average voltage supplied to the ESC, which
+                        in turn dictates motor speed. By varying the duty cycle (0% to 100%), precise speed control is
+                        achieved.
+                    </div>
+
+                    <img id="image5" src="project1-picture5.png">
+
+                    <div class="image-text">
+                        Figure 2 - Stator and Rotor Construction
+                    </div>
+
+                    <div class="content-subheading">
+                        Arduino Implementation
+                    </div>
+
+                    <div class="content-text">
+                        The Arduino program generates 50 Hz PWM signals, similar to controlling servo motors, with the
+                        potentiometer input mapped to PWM duty cycles. ESC calibration ensures proper response across
+                        the entire range.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Simulation and PI Control
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        A mathematical model of the BLDC motor was created in MATLAB/Simulink to analyze electrical and
+                        mechanical dynamics.
+                        <ul>
+                            <li>
+                                The <b>PI controller minimizes </b>steady-state error and ensures smooth speed response
+                            </li>
+                            <li>
+                                Back EMF and phase currents are analyzed to validate commutation and torque generation.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image6" src="project1-picture6.png">
+                    </div>
+
+                    <div class="image-text">
+                        Figure 5 - Simulink Model of BLDC Motor 
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image7" src="project1-picture7.png">
+                    </div>
+
+                    <div class="image-text">
+                        Figure 6 - PI Controller Block 
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Simulation and Results
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        The simulation results confirm that the system achieves the desired reference speed (e.g., 1500 RPM) quickly and stabilizes within 3 seconds, even with load torque applied. Current waveforms and electromagnetic torque were also observed to remain within safe operational limits.
+                    </div>
+
+                    <div>
+                        <img id="image8" src="project1-picture8.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Figure 7 - Speed vs. Time Graph 
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image9" src="project1-picture9.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Figure 8 - Electromagnetic Torque Graph 
+                    </div>
+
+                    <div class="space"></div>
+
+
+                    <div class="content-heading">
+                        <b>
+                            Conclusion
+                        </b>
+                        
+                    </div>
+
+                    <div class="content-text">
+                        This project successfully demonstrates the speed control of a BLDC motor using a low-cost Arduino-based platform combined with PWM signals and an ESC. The Simulink model validates theoretical predictions and highlights the advantages of using PI control for smooth and efficient motor performance. The system is well-suited for applications in robotics, small-scale automation, and electric vehicle subsystems.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <video id="vid1" controls autoplay muted src="project1-vid1.mp4" ></video>
+                    </div>
+
+                    <div>
+                        <img id="image10" src="project1-picture10.jpg">
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="space"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

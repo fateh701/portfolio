@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage8.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <div class="space"></div>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    <div>Intelligent QoS for Real-Time Multimedia over the Internet</div>
+                    <div>Design, Simulation, and Evaluation of DiffServ, Traffic Shaping, and Policing in OMNeT++/INET
+                    </div>
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+                        <b>
+                            Introduction
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        Interactive audio and video suffer on best-effort networks because every flow competes equally
+                        for buffers and bandwidth. This project <b>designs and simulates a QoS pipeline—Differentiated
+                            Services (DiffServ), traffic shaping</b>, and <b>policing</b>—to prioritize real-time flows
+                        (voice/video) while preserving overall stability for best-effort traffic. Using <b>OMNeT++ with
+                            INET</b>, we build a multi-router topology carrying voice (UDP bursts), video (UDP), and web
+                        data (TCP), and we measure the impact on <b>end-to-end delay, queuing time/length, packet
+                            loss</b>, and <b>delivered packets</b> across staged experiments (Phase-1 → Phase-2 →
+                        Phase-3).
+                    </div>
+
+                    <div>
+                        <img id="image1" src="project8-picture1.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Network Topology diagram from Phase-3 (“Network Topology” figure)
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Objective
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        Validate that <b>DiffServ + shaping + policing</b> improve latency/jitter and delivery for
+                        real-time traffic versus best-effort; compare <b>DropTail</b> vs <b>DiffServ/WFQ</b> queuing.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            System Overview and Design
+                        </b>
+                    </div>
+
+                    <div class="content-subheading">
+                        Network & traffic model
+                    </div>
+
+                    <div class="content-text">
+                        The testbed is a multi-router IP network (R1…R7/11) with two end hosts (H1↔H2). We drive three
+                        canonical flows:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>UdpBasicBurst (Voice) : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    bursty, RTP-like; latency-sensitive
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>UdpBasicApp (Video) : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    continuous; latency-sensitive.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>TcpBasicClientApp (Data) : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    request/response; loss-sensitive, elastic
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image2" src="project8-picture2.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        "Application Configurations" screenshot/table from Phase-3 (or Phase-1 "Configured three
+                        applications")
+                    </div>
+
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Phased build
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Phase-1 : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Baseline best-effort vs DiffServ/WRR; instrumentation for sent/received, delay,
+                                    queue time/length
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Phase-2 : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Planned configurations and expected outcomes for <b>Best Effort</b>,
+                                    <b>Policing+Shaping</b>, and <b>Queuing+Policing+Shaping</b>.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Phase-3 : </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Full experiments with graphs and tables for all three scenarios
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            QoS Implementation and Control Strategy
+                        </b>
+                    </div>
+
+                    <div class="content-subheading">
+                        Service differentiation (DiffServ)
+                    </div>
+
+                    <div class="content-text">
+                        Packets are <b>classified and marked</b> into service classes (voice, video, data). Routers use
+                        <b>DiffServ queues</b> (WFQ-like scheduling) so higher-priority flows are served preferentially
+                        during contention.
+                    </div>
+
+                    <div class="content-subheading">
+                        Traffic shaping (edge)
+                    </div>
+
+                    <div class="content-text">
+                        <b>Token-/leaky-bucket</b> shaping smooths bursts to a configured rate before traffic enters the
+                        core, preventing sudden queue buildup.
+                    </div>
+
+                    <div class="content-subheading">
+                        Traffic policing (ingress)
+                    </div>
+
+                    <div class="content-text">
+                        Policers <b>enforce rate limits</b>; out-of-profile packets may be marked or dropped to protect
+                        SLAs and keep the network stable during overloads.
+                    </div>
+
+                    <div>
+                        <img id="image3" src="project8-picture3.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        “Queuing Configurations” / router queue panels showing DiffServ vs DropTail from Phase-1 (e.g.,
+                        DSQueue/EtherQosQueue vs DropTail)
+                    </div>
+
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image4" src="project8-picture4.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Shaping/Policing configuration panel or diagram from Phase-2 or Phase-3 (token/leaky bucket settings)
+                    </div>
+
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Comparative queuing
+                    </div>
+
+                    <div class="content-text">
+                        We benchmark <b>DropTail</b> (single FIFO, tail-drop) against <b>DiffServ queuing</b>. DropTail's simplicity
+                        can starve latency-sensitive flows under load; DiffServ/WFQ reduces head-of-line blocking and
+                        improves fairness across classes.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Simulation and Results
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        We evaluate three scenarios; all metrics are gathered at H1/H2 and key router interfaces.
+                    </div>
+
+                    <div class="content-subheading">
+                        Case 1 — Best Effort (DropTail only)
+                    </div>
+
+                    <div class="content-text">
+                        This module automates streetlight operation using:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Packet delivery : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Real-time flows experience heavy loss under congestion (e.g., audio sent ≈ 21k vs received ≈ 800; video sent ≈ 30k vs received ≈ 4k; data 1/1).
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>End-to-end delay: </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Real-time traffic shows very high latency (tens of seconds), while TCP remains comparatively low.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image5" src="project8-picture5.png">
+                        <img id="image6" src="project8-picture6.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        “Packets Sent and Received” graphs for Best Effort from Phase-3 (Audio/Video/Data)
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image7" src="project8-picture7.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        “End-to-End Delay” graph/table for Best Effort from Phase-3 (or Phase-1 tables)
+                    </div>
+
+                    <div class="space"></div>
+
+                     <div class="content-text">
+                        <b>Takeaway:</b> Conditioning helps, but priority is still required to keep voice/video consistently within latency budgets.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Case 3 — DiffServ + Queuing + Shaping + Policing
+                    </div>
+
+                    <div class="content-text">
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Delivery & delay : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    With <b>per-class queues</b> and <b>edge conditioning</b>, voice/video <b>end-to-end delay drops</b> relative to DropTail; delivery improves because critical packets avoid head-of-line blocking.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Queue behavior : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    DiffServ <b>shortens queueing time/length</b> at key interfaces compared to DropTail, indicating more efficient scheduling for mixed traffic.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img id="image8" src="project8-picture8.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        “End-to-End Delay (DiffServ vs DropTail)” comparison from Phase-1 or Phase-3
+                    </div>
+
+                    <div class="space"></div>
+
+                     <div class="content-text">
+                        <b>Overall:</b> The <b>full QoS stack</b> (DiffServ + shaping + policing) best balances latency and stability for real-time multimedia—<b>outperforming</b> both Best Effort and “rate control only”.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Conclusion
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        <b>Service differentiation plus traffic conditioning is essential</b> when voice/video share links with data. <b>DiffServ queuing</b> reduces latency for real-time classes, while <b>shaping/policing</b> contain bursts and preserve fairness. In contrast, <b>best-effort DropTail</b> exhibits severe real-time <b>loss and delay</b> under load. The combined strategy yields a <b>predictable, lower-latency</b> experience—exactly what interactive applications demand.
+                    </div>
+
+                    <div>
+                        <video id="vid1" controls autoplay muted src="project8-vid1.mp4" ></video>
+                    </div>
+
+                    
+                </div>
+
+                <div class="space"></div>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage3.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <div class="space"></div>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    Smart City Automation Using Embedded and IoT Technologies
+                    Integrating Smart Lighting, Traffic Prioritization, and Environmental Monitoring
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+                        <b>
+                            Introduction
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        Urban areas require intelligent infrastructure that adapts to dynamic environmental and traffic conditions. This Smart City prototype demonstrates the integration of three essential modules— <b>street lighting</b>, <b>RFID-based traffic control</b> and <b>IoT-enabled environmental monitoring</b>—to enhance energy efficiency, public safety, and data-driven decision-making.
+                    </div>
+
+                    <div class="content-text">
+                        The system leverages <b>Arduino-based embedded control</b>, <b>sensor networks</b> and <b>Wi-Fi cloud communication</b> to model a scalable, low-cost urban solution.
+                    </div>
+
+                    <div class="space">
+
+                    </div>
+
+                    <div class="content-heading">
+                        <b>
+                            Project Objective
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        
+                        <ul>
+                            <li>
+                                Implement smart automation for energy-saving street lighting.
+                            </li>
+
+                            <li>
+                                Design an intelligent traffic signal system responsive to emergency vehicles.
+                            </li>
+
+                            <li>
+                                Integrate real-time air quality and temperature sensing with cloud data logging.
+                            </li>
+
+                            <li>
+                                Develop a consolidated prototype demonstrating modular urban services.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            System Architecture
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        The prototype is structured into three hardware subsystems controlled via a <b>central Arduino Uno</b> and integrated with an <b>ESP8266 Wi-Fi module</b> for cloud-based data visualization.
+                    </div>
+
+                    <div class="content-text">
+                        Each subsystem operates independently while communicating through a common control unit. The system also incorporates RFID readers, IR sensors, gas and temperature sensors, and LED indicators.
+                    </div>
+
+                    <img id="image1" src="project3-picture1.png">
+
+                    <div class="image-text">
+                        Suggested Figure: Final Prototype Layout 
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Module 1: Smart Street Lighting
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        This module automates streetlight operation using:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>LDR Sensor : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Detects ambient light to switch lights off during daytime.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>IR Motion Sensors: </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Detect moving vehicles; nearby lights switch from 30% to 100% brightness.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="content-text">
+                        Brightness control is achieved via <b>PWM output from Arduino</b>, allowing smooth transitions.
+                    </div>
+
+                    <img id="image2" src="project3-picture2.png">
+
+                    <div class="image-text">
+                        Suggested Figure: Streetlight Control Circuit  
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Highlights:
+                    </div>
+
+                    <div class="content-text">
+                        
+                        <ul>
+                            <li>
+                                Reduces unnecessary power usage during idle hours.
+                            </li>
+
+                            <li>
+                                Reacts dynamically to traffic movement.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Module 2: Traffic Signal with Emergency Vehicle Clearance
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        The traffic light module responds to both general traffic and tagged emergency vehicles using:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>IR Sensors :</b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Detect the presence of vehicles in each lane.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>RFID Reader : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Identifies emergency vehicles based on pre-coded tags.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="content-text">
+                        When an emergency vehicle is detected, normal signal sequencing is overridden to <b>grant immediate green passage</b>.
+                    </div>
+
+                    <div>
+                        <img id="image3" src="project3-picture3.png">
+                        <img id="image4" src="project3-picture4.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: Traffic Control Circuit with RFID Logic 
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Highlights:
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+                                Reduces response times for emergency services.
+                            </li>
+
+                            <li>
+                                Prevents collisions via adaptive signaling.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Module 3: Environmental Monitoring and IoT Integration
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        Environmental parameters are monitored using:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>MQ-135 Gas Sensor : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Measures air quality (CO₂, NH₃, etc.).
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>LM35 Temperature Sensor : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Tracks ambient temperature.
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="content-text">
+                        Data is transmitted via the <b>ESP8266 module</b> to the <b>ThingSpeak cloud</b>, where it's displayed in real-time dashboards.
+                    </div>
+
+                    <div>
+                        <img id="image5" src="project3-picture5.png">
+                        <img id="image6" src="project3-picture6.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: Environmental Sensing Circuit  
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div>
+                        <img id="image7" src="project3-picture7.png">
+                        <img id="image8" src="project3-picture8.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: ThingSpeak Cloud Output  
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        Highlights:
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+                                Supports predictive pollution control.
+                            </li>
+
+                            <li>
+                                Enables remote environmental tracking
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Prototype Development
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        The system was built on a scaled-down physical model of a city intersection, including:
+                        <ul>
+                            <li>
+                                Roadways with streetlights.
+                            </li>
+
+                            <li>
+                                Traffic poles with red-yellow-green LEDs.
+                            </li>
+
+                            <li>
+                                Simulated emergency vehicle units with RFID tags.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="content-text">
+                        All modules were tested in isolation and as part of the full integrated setup.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Testing & Results
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        Environmental parameters are monitored using:
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Lighting Module : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Accurately adjusted brightness based on time of day and motion.
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Traffic Module : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Detected RFID signals with minimal latency and updated signals correctly.
+                                </div>
+
+                            </li>
+                            
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>IoT Module : </b>
+                                </div>
+                                
+                                <div class="innerli-text">
+                                    Streamed sensor data to ThingSpeak without packet loss or delay.
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Conclusion
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        This Smart City prototype successfully demonstrates how embedded systems and IoT can be combined to deliver responsive, <b>real-time urban automation</b>. Each module is independently operable and can be expanded to larger deployments.
+                    </div>
+
+                    <div>
+                        <video id="vid1" controls autoplay muted src="project3-vid1.mp4" ></video>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Future Scope
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Solar Panel Integration </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    For powering remote units
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>GSM Alerts </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    For pollution or temperature threshold breaches
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>AI-based Traffic Prediction </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Dynamic rerouting
+                                </div>
+
+                            </li>
+                            
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Integration with Civic Infrastructure </b>
+                                </div>
+
+                                <div class="innerli-text">
+                                    Such as smart bins and parking
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                   
+
+                    
+
+                </div>
+
+                <div class="space"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

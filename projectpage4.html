@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehteshaam Fateh Portfolio</title>
+    <link rel="stylesheet" href="projectpage4.css">
+</head>
+
+<body>
+    <div class="maincontainer">
+
+        <video class="background" autoplay muted loop id="myVideo">
+            <source src="background6.mp4" type="video/mp4">
+        </video>
+
+        <div class="wrapper">
+
+            <div class="space"></div>
+
+            <div class="section background-color1">
+
+                <div class="heading background-color2">
+                    PWM-Based Speed Control of BLDC Motor with Overheating Protection
+                </div>
+
+                <div class="content background-color2">
+
+                    <div class="content-heading">
+                        <b>
+                            Overview
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        This project presents a cost-effective solution for speed control of a Brushless DC (BLDC) motor using Pulse Width Modulation (PWM) and includes overheating protection. The implementation uses the AT89S52 microcontroller and demonstrates how digital techniques can enable smooth motor control without mechanical brushes—reducing wear and maintenance costs.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Introduction
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        Brushless DC motors (BLDC) are increasingly favored for their high torque-to-weight ratio, energy efficiency, and quiet operation. However, precise and efficient speed control has long posed a challenge. This project tackles the problem using PWM-based control along with a microcontroller interface and temperature sensing mechanism to safeguard against overheating.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+                        <b>
+                            Objective
+                        </b>
+                    </div>
+
+                    <div class="content-text">
+                        
+                        <ul>
+                            <li>
+                                Develop a closed-loop simulation and hardware prototype for controlling the speed of a BLDC motor using PWM.
+                            </li>
+
+                            <li>
+                                Enable user-driven speed variation via push buttons.
+                            </li>
+
+                            <li>
+                                Integrate an overheating protection system using a temperature sensor and buzzer alarm.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Key Components and Tools
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        
+                        <ul>
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Microcontroller : AT89S52</b>
+                                </div>
+                     
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>BLDC Motor</b>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Opto-coupler, Transformer, Voltage Regulator</b>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>7-segment Display </b>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Temperature Sensor & Buzzer</b>
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="innerli-head">
+                                    <b>Simulation Software: KEIL (for embedded C), Proteus (for circuit design and testing)</b>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            System Workflow and Implementation
+                        </b>
+
+                    </div>
+
+                    <div class="content-subheading">
+                        1. PWM Generation
+                    </div>
+
+                    <div class="content-text">
+                        PWM signals are generated via the microcontroller to control the switching of transistors in the H-Bridge, regulating voltage applied to the BLDC motor.
+                    </div>
+
+                    <div class="content-subheading">
+                        2. H-Bridge Control
+                    </div>
+
+                    <div class="content-text">
+                        An H-Bridge driver allows directional control of the current through the motor windings. By toggling switches in a specific sequence, rotation speed and direction are precisely controlled.
+                    </div>
+                    
+                     <div>
+                        <img id="image1" src="project4-picture1.png">
+                        <img id="image2" src="project4-picture2.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: H-Bridge circuit configuration as used in the hardware setup (presentation slide: “Working of H-Bridge”).
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        3. Simulation and Tuning
+                    </div>
+
+                    <div class="content-text">
+                        The embedded code was written in C, compiled in KEIL, and simulated in Proteus to validate the circuit behavior before hardware implementation.
+                    </div>
+
+                    <div>
+                        <img id="image3" id="image3" src="project4-picture3.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: Proteus simulation layout with labeled components (slide: “PROTEUS SIMULATION”).
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-subheading">
+                        4. Hardware Design
+                    </div>
+
+                    <div class="content-text">
+                        After successful simulation, components were integrated onto a physical board. A push-button interface allowed for incremental speed changes, displayed on the 7-segment display. The system also reads temperature via a sensor to activate a buzzer in overheating scenarios.
+                    </div>
+
+                    <div>
+                        <img id="image4" src="project4-picture4.png">
+                    </div>
+
+
+                    <div class="image-text">
+                        Suggested Figure: Photograph of actual hardware setup (slide: “HARDWARE SETUP”).
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Performance Summary
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        The final implementation successfully demonstrated the following:
+                        <ul>
+                            <li>
+                                Stable speed control using PWM with digital input.
+                            </li>
+
+                            <li>
+                                Real-time temperature monitoring and alert system.
+                            </li>
+
+                            <li>
+                                Modular design suitable for various industrial applications including HVAC, automotive fans, and robotics.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Conclusion
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        This project validates the use of low-cost embedded solutions for the speed control of BLDC motors. The PWM method provides smooth motor acceleration and deceleration, while the thermal protection enhances reliability. With precise tuning and component integration, the system stands as a practical model for educational and industrial use cases.
+                    </div>
+
+                    <div class="space"></div>
+
+                    <div class="content-heading">
+
+                        <b>
+                            Future Enhancements
+                        </b>
+
+                    </div>
+
+                    <div class="content-text">
+                        While the current model operates in an open-loop configuration, adding a feedback mechanism such as a Hall effect sensor or tachometer can enable closed-loop control. This would ensure constant motor speed under varying load conditions, improving its robustness for commercial applications.
+                    </div>
+
+
+
+                    
+                </div>
+
+                
+                    <div class="space"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
