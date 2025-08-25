@@ -198,10 +198,14 @@
     /* border: 2px solid red; */
     /* padding: 10px 30px 10px 30px; */
 
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
+
+
 }
 
 .links a:hover {
-    zoom: 1.05;
+    transform: scale(1.05);
 }
 
 .links a:visited {
@@ -212,6 +216,17 @@
     height: 45px;
 }
 
+.links-download{
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
+}
+
+.links-download:hover{
+    transform: scale(1.05);
+}
+
+
+
 .links-download a {
     background-color: hsla(0, 0%, 48%, 0.1);
     padding: 10px 40px 10px 40px;
@@ -220,10 +235,16 @@
     color: #F6AE2D;
     text-decoration: none;
     /* border: 2px solid #F6AE2D; */
+
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
+
 }
 
-.links-download:hover {
-    zoom: 1.05;
+.links-download a:hover {
+    
+    color: black;
+    background-color: #F6AE2D;
 }
 
 .links-download a:visited {
@@ -231,6 +252,10 @@
     color: #F6AE2D;
 }
 
+.links-download a:visited:hover {
+    /* color: hsl(0, 0%, 75%); */
+    color: black;
+}
 .section {
     border-radius: 15px;
     margin-top: 45px;
@@ -239,6 +264,7 @@
     display: flex;
     justify-content: space-around;
     gap: 20px;
+    margin-bottom: 32px;
 
 }
 
@@ -247,6 +273,7 @@
     padding: 10px;
     border: 2px solid #F6AE2D;
     padding-bottom: 15px;
+    
 }
 
 .section-project>.heading {
@@ -290,6 +317,13 @@
     /* border-bottom: 2px solid hsl(0, 0%, 20%); */
     /* border-right: 2px solid hsl(0, 0%, 20%); */
     /* border: 1px solid #F6AE2D; */
+
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
+}
+
+.project:hover {
+    transform: scale(1.05);
 }
 
 
@@ -705,7 +739,16 @@
     /* padding: 15px; */
 
     /* border: 2px solid red; */
+
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
 }
+
+.publication-read:hover {
+    transform: scale(1.05);
+    color: black;
+}
+
 
 .publication-read>a {
     padding: 10px 25px 10px 25px;
@@ -715,15 +758,24 @@
 
     text-decoration: none;
     color: #F6AE2D;
+
+    transition: 0.1s linear;
+    transform-origin: 50% 50%;
+
 }
 
 
 .publication-read>a:hover {
-    zoom: 1.05;
+    background-color: #F6AE2D;
+    color: black;
 }
 
 .publication-read>a:visited {
     color: #F6AE2D;
+}
+
+.publication-read>a:visited:hover {
+    color: black;
 }
 
 .section-publication {
@@ -854,10 +906,10 @@
         /* align-items: stretch; */
         /* padding: 15px; */
         /* border: 2px solid blue; */
-        
+
     }
 
-    .skills{
+    .skills {
         width: fit-content;
         /* border: 2px solid red; */
         width: 35%;
