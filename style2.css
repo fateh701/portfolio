@@ -796,6 +796,31 @@
 
 }
 
+.certificate-section {
+    padding: 10px;
+    border: 2px solid #F6AE2D;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-section>.heading {
+    padding: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #F6AE2D;
+}
+
+.certificate-space {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.certificate {
+    width: 100%;
+}
+
 @media (max-width: 700px) {
 
     .landing {
@@ -925,5 +950,23 @@
         gap: 8px;
     }
 
+    .certificate-section {
+        width: auto;
+    }
+
+    .certificate-section>.heading {
+        font-size: 40px;
+    }
+
+    .certificate-space {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .certificate {
+        width: 100%;
+    }
+
 
 }
+
